@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+    引入css
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1/css/bootstrap.css' %}">
+    -->
+</head>
+<body>
+    <h1>user list</h1>
+    <p>{{n1}}</p>
+    <p>{{n2.1}}</p>
+    <p>
+        {% for item in n2 %}
+            {{item}}
+        {% endfor %}
+    </p>
+    <p>{{n3.role}}</p>
+
+    <hr/>
+    {% if n1 == "han" %}
+        <p>hhhhhhhhhh</p>
+    {% else %}
+        <p>dddddddddd</p>
+    {% endif %}
+
+    <img src="{% static '/img/images.jpg' %}" alt="">
+</body>
+</html>
