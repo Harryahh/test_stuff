@@ -1,3 +1,4 @@
+
 {% load static %}
 
 <!DOCTYPE html>
@@ -5,41 +6,22 @@
 <head>
     <meta charset="UTF-8">
     <title>image generate & analysis</title>
-    <link rel="stylesheet" href="{% static 'mission.css' %}">
 </head>
 <body>
-  <form method="post" class="form bottom__content" id="form">
-    {% csrf_token %}
+    <form method="post">
+        {% csrf_token %}
 
-    centroid algorithm: 
-    <!-- add a class attribute with the value content__button -->
-    <input type="text" name="centroid_algo" id="centroid_algo" class="content__button">
-    <!-- add a span element with a class attribute with the value text -->
-    <span class="text">Enter centroid algorithm</span>
-    <br>
+        centroid algorithm: <input type="text" name="centroid_algo"> <br>
+        centroid mag filter: <input type="text" name="centroid_mag_filter"> <br>
+        star id algorithm: <input type="text" name="star_id_algo"> <br>
+        database: <input type="text" name="database"> <br>
+        attitude algorithm: <input type="text" name="attitude_algo"> <br>
+        <input type="submit" value="submit form">
+    </form>
 
-    centroid mag filter: 
-    <!-- repeat the same steps for each input element -->
-    <input type="text" name="centroid_mag_filter" id="centroid_mag_filter" class="content__button">
-    <span class="text">Enter centroid mag filter</span>
-    <br>
-
-    star id algorithm: 
-    <input type="text" name="star_id_algo" id="star_id_algo" class="content__button">
-    <span class="text">Enter star id algorithm</span>
-    <br>
-
-    database: 
-    <input type="text" name="database" id="database" class="content__button">
-    <span class="text">Enter database</span>
-    <br>
-
-    attitude algorithm:
-    <input type="text" name="attitude_algo" id="attitude_algo" class="content__button">
-    <span class="text">Enter attitude algorithm</span>
-    <br>
-    <!-- add a class attribute with the value content__button to the button element -->
-    <button type="submit" value="submit form" class="btn-submit content__button">Submit</button>
-  </form>
+    <hr/>
+    {% if n1 == "show" %}
+        <img src="{% static img_url %}" alt="">
+    {% endif %}
 </body>
 </html>
